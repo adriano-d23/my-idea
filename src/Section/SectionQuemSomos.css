@@ -1,0 +1,52 @@
+.section-quem-somos {
+  width: 100%;
+  padding: 20px 0; /* Mantém o padding consistente */
+  text-align: center;
+  background: linear-gradient(to right, #ffffff 25%, #00000000 25%, #00000000 50%, #ffffff 50%, #ffffff 75%, #00000000 75%);
+}
+
+.section-quem-somos h2 {
+  margin-bottom: 20px; /* Ajusta a margem inferior */
+  font-size: 2rem; /* Tamanho consistente com o outro título */
+  color: #101645;
+  position: relative; /* Necessário para posicionar o sublinhado */
+  display: inline-block;
+}
+
+.section-quem-somos h2::after {
+  content: '';
+  display: block;
+  width: 50px; /* Largura do sublinhado */
+  height: 3px; /* Altura do sublinhado */
+  background-color: #101645; /* Cor do sublinhado */
+  margin: 8px auto 0; /* Centraliza o sublinhado */
+}
+
+.quem-somos-cards {
+  display: flex;
+  justify-content: center; /* Centraliza os cards */
+  gap: 20px; /* Espaçamento entre os cards */
+  flex-wrap: wrap; /* Garante que os cards fiquem responsivos */
+}
+
+.quem-somos-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  margin: 20px;
+  box-shadow: 0 4px 8px #101645;
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quem-somos-card:hover {
+  transform: scale(1.05);
+}
+
+.quem-somos-card p {
+  font-size: 1rem;
+  color: #666;
+}

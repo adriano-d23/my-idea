@@ -1,0 +1,69 @@
+.services {
+    background: linear-gradient(to right, #ffffff 25%, #00000000 25%, #00000000 50%, #ffffff 50%, #ffffff 75%, #00000000 75%);
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.service-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden; 
+    width: 10px; /* Reduza o tamanho dos cards */
+    margin: 0 10px 20px; /* Adicione margens entre os cards */
+    transition: transform 0.3s ease; 
+}
+
+.service-card:hover {
+    transform: scale(1.05); 
+}
+
+
+.service-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px 8px 0 0;
+    object-fit: cover; /* Isso garante que a imagem cubra o espaço disponível sem distorção */
+}
+
+.service-content {
+    padding: 20px;
+}
+
+.service-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.25em;
+    color: #333;
+}
+
+.service-card p {
+    margin: 0;
+    color: #666;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-header h2 {
+    font-size: 24px;
+    color: #101645;
+}
+
+.separator {
+    width: 150px;
+    height: 4px;
+    background-color: #090e2c;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1rem;
+}

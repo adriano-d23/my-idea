@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
+
+.header {
+    background-image: linear-gradient(to right, #0D0D0D, #182d8b);
+    padding: 0.1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.header.sticky {
+    background-image: linear-gradient(to right, #0D0D0D, #182d8b);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Efeito de sombra */
+}
+
+.header .wrapper {
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.wrapper .logo {
+    display: flex;
+    align-items: center;
+}
+
+.wrapper .logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+.wrapper .logo .logo-text {
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    background-image: linear-gradient(to right, #F0C27B, #FFE680); /* Degradê de ouro claro */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.wrapper .navigation {
+    display: flex;
+    align-items: center;
+}
+
+.navigation li {
+    list-style: none;
+    cursor: pointer;
+    padding: 0.8rem 1.5rem;
+    position: relative;
+}
+
+.navigation li a {
+    color: #cdcdcd;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    transition: color 0.3s ease;
+    background-image: linear-gradient(to right, #F0C27B, #FFE680); /* Efeito dourado no hover */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.navigation li:hover a {
+    color: #fff; /* Brilha em branco ao passar o mouse */
+}
+
+.navigation li:hover {
+    background-color: rgba(240, 194, 123, 0.2); /* Fundo dourado transparente ao hover */
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.bar_menu {
+    display: none;
+}
+
+@media (max-width: 1200px) {
+    .bar_menu {
+        display: block;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    .wrapper .navigation {
+        display: none;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #0D0D0D;
+        z-index: 999;
+        padding-top: 20px;
+    }
+
+    .wrapper .navigation.active {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .wrapper .navigation li {
+        width: 100%;
+        padding: 1rem;
+        border-top: 1px solid #333;
+    }
+
+    .navigation li a {
+        font-size: 1.5rem;
+    }
+}
+
+/* Transição suave no scroll */
+html {
+    scroll-behavior: smooth;
+}

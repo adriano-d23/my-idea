@@ -1,0 +1,14 @@
+.footer {
+  background-color: #02081c; /* Cor de fundo do footer */
+  color: #fff; /* Cor do texto no footer */
+  padding: 5px 0; /* Espaçamento interno superior e inferior reduzido */
+}
+
+.footer-content {
+  max-width: 1200px; /* Largura máxima do conteúdo do footer */
+  margin: 0 auto; /* Centraliza o conteúdo horizontalmente */
+  text-align: center; /* Centraliza o texto */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
