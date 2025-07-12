@@ -18,7 +18,7 @@ const SectionContact = () => {
         </div>
         <div className="contact">
           <h2>CONTATO</h2>
-          <p>Telefone: (62) 9.95667-4176</p>
+          <p>Telefone: (62) 9.95666-4176</p>
           <p>Email: <a href="mailto:mydeiasuport@gmail.com">mydeiasuport@gmail.com</a></p>
           <div className="social-icons">
             <a href="https://www.facebook.com/profile.php?id=100077938535114" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-square"></i></a>
