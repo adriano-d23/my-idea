@@ -145,7 +145,9 @@ const Footer = () => {
                 <FontAwesomeIcon icon={faFacebook} />
               </motion.a>
               <motion.a 
-                href="#" 
+                href="https://www.linkedin.com/in/adriano-dias-correia-413415255/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="social-link linkedin"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
