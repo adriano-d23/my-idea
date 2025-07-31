@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import './App.css';
 import { DropDown } from './DropDown/DropDown';
 import Footer from './DropDown/Footer';
@@ -7,6 +7,7 @@ import SectionHome from './Section/SectionHome';
 import SectionQuemSomos from './Section/SectionQuemSomos';
 import SectionServices from './Section/SectionServices';
 import SectionContact from './Section/SectionContact';
+import ScrollProgress from './components/ScrollProgress';
 
 function App() {
   const homeRef = useRef(null);
@@ -21,32 +22,53 @@ function App() {
     }
   };
 
+  // Efeito para adicionar classe sticky ao header no scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const header = document.querySelector('.header');
+      if (header) {
+        if (window.scrollY > 50) {
+          header.classList.add('sticky');
+        } else {
+          header.classList.remove('sticky');
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <div className="App">
+      <ScrollProgress />
+      
       <DropDown
         scrollToSection={scrollToSection}
         refs={{ homeRef, quemSomosRef, servicesRef, ferramentasRef, contactRef }}
       />
 
-      <div ref={homeRef}>
-        <SectionHome />
-      </div>
+      <main>
+        <section ref={homeRef}>
+          <SectionHome />
+        </section>
 
-      <div ref={quemSomosRef}>
-        <SectionQuemSomos />
-      </div>
+        <section ref={quemSomosRef}>
+          <SectionQuemSomos />
+        </section>
 
-      <div ref={servicesRef}>
-        <SectionServices />
-      </div>
+        <section ref={servicesRef}>
+          <SectionServices />
+        </section>
 
-      <div ref={ferramentasRef}>
-        <SectionFerramentas />
-      </div>
+        <section ref={ferramentasRef}>
+          <SectionFerramentas />
+        </section>
 
-      <div ref={contactRef}>
-        <SectionContact />
-      </div>
+        <section ref={contactRef}>
+          <SectionContact />
+        </section>
+      </main>
 
       <Footer />
     </div>

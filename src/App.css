@@ -1,5 +1,56 @@
 .App {
   text-align: center;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Barra de progresso do scroll */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  transform-origin: 0%;
+  z-index: 1001;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+/* Efeitos de scroll suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Melhorias gerais */
+* {
+  box-sizing: border-box;
+}
+
+/* Otimizações para performance */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Melhorias para acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .scroll-progress {
+    display: none;
+  }
+}
+
+/* Responsividade geral */
+@media (max-width: 768px) {
+  .App {
+    font-size: 14px;
+  }
 }
 
 .App-logo {

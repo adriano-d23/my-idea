@@ -1,121 +1,244 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 .header {
-    background-image: linear-gradient(to right, #0D0D0D, #182d8b);
-    padding: 0.1rem 0;
+    background: rgba(13, 13, 13, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 0.5rem 0;
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 1000;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .header.sticky {
-    background-image: linear-gradient(to right, #0D0D0D, #182d8b);
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Efeito de sombra */
+    background: rgba(13, 13, 13, 0.98);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .header .wrapper {
-    width: 85%;
+    width: 90%;
+    max-width: 1400px;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 20px;
 }
 
 .wrapper .logo {
     display: flex;
     align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.wrapper .logo:hover {
+    transform: scale(1.05);
 }
 
 .wrapper .logo img {
     height: 50px;
-    margin-right: 10px;
+    margin-right: 12px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 .wrapper .logo .logo-text {
-    font-size: 20px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
-    background-image: linear-gradient(to right, #F0C27B, #FFE680); /* Degradê de ouro claro */
+    font-size: 22px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    background: linear-gradient(45deg, #667eea, #764ba2, #667eea);
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease infinite;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 1px;
 }
 
 .wrapper .navigation {
     display: flex;
     align-items: center;
+    gap: 10px;
 }
 
 .navigation li {
     list-style: none;
     cursor: pointer;
-    padding: 0.8rem 1.5rem;
+    padding: 0.8rem 1.2rem;
     position: relative;
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.navigation li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.navigation li:hover::before {
+    left: 100%;
 }
 
 .navigation li a {
-    color: #cdcdcd;
+    color: #e0e0e0;
     text-decoration: none;
-    font-size: 16px;
-    font-weight: 700;
-    transition: color 0.3s ease;
-    background-image: linear-gradient(to right, #F0C27B, #FFE680); /* Efeito dourado no hover */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
 }
 
 .navigation li:hover a {
-    color: #fff; /* Brilha em branco ao passar o mouse */
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
 }
 
 .navigation li:hover {
-    background-color: rgba(240, 194, 123, 0.2); /* Fundo dourado transparente ao hover */
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    background: rgba(102, 126, 234, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
 }
 
 .bar_menu {
     display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #e0e0e0;
+    transition: all 0.3s ease;
+    padding: 8px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
 }
 
+.bar_menu:hover {
+    color: #ffffff;
+    background: rgba(102, 126, 234, 0.1);
+    transform: scale(1.1);
+}
+
+/* Menu mobile melhorado */
 @media (max-width: 1200px) {
     .bar_menu {
         display: block;
-        font-size: 2rem;
-        cursor: pointer;
     }
 
     .wrapper .navigation {
         display: none;
         position: fixed;
-        top: 60px;
+        top: 70px;
         left: 0;
         width: 100%;
-        background-color: #0D0D0D;
+        background: rgba(13, 13, 13, 0.98);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
         z-index: 999;
-        padding-top: 20px;
+        padding: 20px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        animation: slideDown 0.3s ease-out;
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     .wrapper .navigation.active {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        gap: 0;
     }
 
     .wrapper .navigation li {
-        width: 100%;
+        width: 90%;
+        max-width: 300px;
         padding: 1rem;
-        border-top: 1px solid #333;
+        border-radius: 12px;
+        margin: 5px 0;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.02);
     }
 
     .navigation li a {
-        font-size: 1.5rem;
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+
+    .navigation li:hover {
+        background: rgba(102, 126, 234, 0.15);
+        border-color: rgba(102, 126, 234, 0.3);
+        transform: translateY(-3px);
     }
 }
 
-/* Transição suave no scroll */
+/* Responsividade para telas muito pequenas */
+@media (max-width: 480px) {
+    .header .wrapper {
+        width: 95%;
+        padding: 0 10px;
+    }
+
+    .wrapper .logo img {
+        height: 40px;
+    }
+
+    .wrapper .logo .logo-text {
+        font-size: 18px;
+    }
+
+    .bar_menu {
+        font-size: 1.5rem;
+        padding: 6px;
+    }
+
+    .wrapper .navigation li {
+        width: 95%;
+        padding: 0.8rem;
+    }
+
+    .navigation li a {
+        font-size: 1rem;
+    }
+}
+
+/* Efeito de scroll suave */
 html {
     scroll-behavior: smooth;
+}
+
+/* Melhorias para acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+    .header,
+    .navigation li,
+    .wrapper .logo,
+    .bar_menu {
+        transition: none;
+    }
+    
+    .wrapper .logo .logo-text {
+        animation: none;
+    }
 }
