@@ -22,21 +22,49 @@ function App() {
     }
   };
 
-  // Efeito para adicionar classe sticky ao header no scroll
+  // Efeito para controlar o header baseado no scroll
   useEffect(() => {
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
     const handleScroll = () => {
       const header = document.querySelector('.header');
-      if (header) {
-        if (window.scrollY > 50) {
-          header.classList.add('sticky');
-        } else {
-          header.classList.remove('sticky');
-        }
+      if (!header) return;
+
+      const currentScrollY = window.scrollY;
+      
+      // Adicionar classe scrolled quando scrollar para baixo
+      if (currentScrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+
+      // Esconder/mostrar header baseado na direção do scroll
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scroll para baixo - esconder header
+        header.classList.add('hidden');
+      } else {
+        // Scroll para cima - mostrar header
+        header.classList.remove('hidden');
+      }
+
+      lastScrollY = currentScrollY;
+      ticking = false;
+    };
+
+    const requestTick = () => {
+      if (!ticking) {
+        requestAnimationFrame(handleScroll);
+        ticking = true;
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', requestTick);
+    
+    return () => {
+      window.removeEventListener('scroll', requestTick);
+    };
   }, []);
 
   return (

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 .header {
-    background: rgba(13, 13, 13, 0.95);
+    background: rgba(13, 13, 13, 0.1);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     padding: 0.5rem 0;
@@ -12,14 +12,20 @@
     z-index: 1000;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transform: translateY(0);
 }
 
-.header.sticky {
-    background: rgba(13, 13, 13, 0.98);
+.header.scrolled {
+    background: rgba(13, 13, 13, 0.95);
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    transform: translateY(0);
+}
+
+.header.hidden {
+    transform: translateY(-100%);
 }
 
 .header .wrapper {
@@ -93,7 +99,7 @@
 }
 
 .navigation li a {
-    color: #e0e0e0;
+    color: #ffffff;
     text-decoration: none;
     font-size: 15px;
     font-weight: 600;
@@ -101,15 +107,16 @@
     transition: all 0.3s ease;
     position: relative;
     z-index: 1;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .navigation li:hover a {
     color: #ffffff;
-    text-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+    text-shadow: 0 0 10px rgba(102, 126, 234, 0.8);
 }
 
 .navigation li:hover {
-    background: rgba(102, 126, 234, 0.1);
+    background: rgba(255, 255, 255, 0.1);
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
 }
@@ -118,16 +125,17 @@
     display: none;
     font-size: 1.8rem;
     cursor: pointer;
-    color: #e0e0e0;
+    color: #ffffff;
     transition: all 0.3s ease;
     padding: 8px;
     border-radius: 8px;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.1);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .bar_menu:hover {
     color: #ffffff;
-    background: rgba(102, 126, 234, 0.1);
+    background: rgba(102, 126, 234, 0.2);
     transform: scale(1.1);
 }
 
