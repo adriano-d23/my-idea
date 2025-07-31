@@ -6,7 +6,6 @@ import SectionFerramentas from './Section/SectionFerramentas';
 import SectionHome from './Section/SectionHome';
 import SectionQuemSomos from './Section/SectionQuemSomos';
 import SectionServices from './Section/SectionServices';
-import SectionContact from './Section/SectionContact';
 import ScrollProgress from './components/ScrollProgress';
 import WhatsAppButton from './components/WhatsAppButton';
 
@@ -15,7 +14,6 @@ function App() {
   const quemSomosRef = useRef(null);
   const servicesRef = useRef(null);
   const ferramentasRef = useRef(null);
-  const contactRef = useRef(null);
 
   const scrollToSection = (sectionRef) => {
     if (sectionRef.current) {
@@ -71,7 +69,7 @@ function App() {
       
       <DropDown
         scrollToSection={scrollToSection}
-        refs={{ homeRef, quemSomosRef, servicesRef, ferramentasRef, contactRef }}
+        refs={{ homeRef, quemSomosRef, servicesRef, ferramentasRef }}
       />
 
       <main>
@@ -89,10 +87,6 @@ function App() {
 
         <section ref={ferramentasRef}>
           <SectionFerramentas />
-        </section>
-
-        <section ref={contactRef}>
-          <SectionContact />
         </section>
       </main>
 

@@ -42,9 +42,6 @@ export const DropDown = ({ scrollToSection, refs }) => {
           <li className="list-menu" onClick={() => handleScroll(refs.ferramentasRef)}>
             <a href="#ferramentas">Ferramentas</a>
           </li>
-          <li className="list-menu" onClick={() => handleScroll(refs.contactRef)}>
-            <a href="#contato">Contato</a>
-          </li>
         </ul>
       </div>
     </header>
