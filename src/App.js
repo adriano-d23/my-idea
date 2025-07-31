@@ -8,6 +8,7 @@ import SectionQuemSomos from './Section/SectionQuemSomos';
 import SectionServices from './Section/SectionServices';
 import SectionContact from './Section/SectionContact';
 import ScrollProgress from './components/ScrollProgress';
+import WhatsAppButton from './components/WhatsAppButton';
 
 function App() {
   const homeRef = useRef(null);
@@ -33,20 +34,14 @@ function App() {
 
       const currentScrollY = window.scrollY;
       
+      // Sempre mostrar o header, apenas mudar a opacidade
+      header.classList.remove('hidden');
+      
       // Adicionar classe scrolled quando scrollar para baixo
-      if (currentScrollY > 50) {
+      if (currentScrollY > 10) {
         header.classList.add('scrolled');
       } else {
         header.classList.remove('scrolled');
-      }
-
-      // Esconder/mostrar header baseado na direção do scroll
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        // Scroll para baixo - esconder header
-        header.classList.add('hidden');
-      } else {
-        // Scroll para cima - mostrar header
-        header.classList.remove('hidden');
       }
 
       lastScrollY = currentScrollY;
@@ -60,6 +55,9 @@ function App() {
       }
     };
 
+    // Executar imediatamente para configurar o estado inicial
+    handleScroll();
+    
     window.addEventListener('scroll', requestTick);
     
     return () => {
@@ -99,6 +97,8 @@ function App() {
       </main>
 
       <Footer />
+      
+      <WhatsAppButton />
     </div>
   );
 }
