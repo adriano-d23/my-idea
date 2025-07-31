@@ -1,6 +1,6 @@
 /* Reset completo do footer antigo */
 .footer {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  background: var(--footer-gradient) !important;
   color: white !important;
   padding: 60px 0 20px !important;
   position: relative !important;
@@ -57,6 +57,7 @@
   line-height: 1.6;
   opacity: 0.9;
   font-family: 'Inter', sans-serif;
+  color: #ffffff;
 }
 
 .footer-section h4 {
@@ -79,12 +80,13 @@
   opacity: 0.9;
   transition: all 0.3s ease;
   cursor: pointer;
+  color: #ffffff;
 }
 
 .footer-section ul li:hover {
   opacity: 1;
   transform: translateX(5px);
-  color: #f0f0f0;
+  color: var(--accent-color);
 }
 
 .contact-info {
@@ -100,17 +102,19 @@
   font-size: 0.95rem;
   opacity: 0.9;
   transition: all 0.3s ease;
+  color: #ffffff;
 }
 
 .contact-item:hover {
   opacity: 1;
   transform: translateX(5px);
+  color: var(--accent-color);
 }
 
 .contact-item svg {
   width: 16px;
   height: 16px;
-  color: #f0f0f0;
+  color: #ffffff;
 }
 
 .social-links {
@@ -130,7 +134,7 @@
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  color: white;
+  color: #ffffff;
   text-decoration: none;
   transition: all 0.3s ease;
   font-size: 1.2rem;
@@ -181,11 +185,24 @@
   opacity: 0.8;
   margin: 0;
   font-family: 'Inter', sans-serif;
+  color: #ffffff;
 }
 
 .footer-bottom p:last-child {
   font-size: 0.8rem;
   opacity: 0.6;
+  color: #ffffff;
+}
+
+/* Modo escuro - manter cores brancas */
+.dark-mode .footer-logo p,
+.dark-mode .footer-section h4,
+.dark-mode .footer-section ul li,
+.dark-mode .contact-item,
+.dark-mode .contact-item svg,
+.dark-mode .social-link,
+.dark-mode .footer-bottom p {
+  color: #ffffff;
 }
 
 /* Remover estilos antigos */

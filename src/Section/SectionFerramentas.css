@@ -1,5 +1,5 @@
 .section-ferramentas {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--ferramentas-gradient);
     padding: 80px 20px;
     position: relative;
     overflow: hidden;
@@ -68,11 +68,25 @@
 
 .intro-text {
     font-size: clamp(1rem, 2.5vw, 1.3rem);
-    color: rgba(255, 255, 255, 0.9);
+    color: #ffffff !important;
     max-width: 800px;
     margin: 0 auto;
     line-height: 1.6;
     font-family: 'Inter', sans-serif;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    font-weight: 400;
+}
+
+/* Garantir que o texto seja branco em todos os casos */
+.section-ferramentas .intro-text,
+.section-ferramentas p.intro-text {
+    color: #ffffff !important;
+}
+
+/* Sobrescrever qualquer estilo que possa estar interferindo */
+.section-ferramentas .intro-text {
+    color: #ffffff !important;
+    opacity: 1 !important;
 }
 
 .content-wrapper {

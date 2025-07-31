@@ -1,0 +1,105 @@
+/* Variáveis CSS para temas */
+:root {
+  /* Cores do tema claro */
+  --bg-primary: #f2f2f2;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f8f9fa;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --text-muted: #999999;
+  --border-color: #e0e0e0;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --accent-color: #667eea;
+  --accent-secondary: #764ba2;
+  --header-bg: rgba(13, 13, 13, 0.1);
+  --header-bg-scrolled: rgba(13, 13, 13, 0.95);
+  --card-bg: #ffffff;
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --input-bg: #ffffff;
+  --input-border: #d0d0d0;
+  --button-bg: linear-gradient(45deg, #667eea, #764ba2);
+  --button-text: #ffffff;
+  --link-color: #667eea;
+  --link-hover: #764ba2;
+  --ferramentas-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --footer-gradient: linear-gradient(to right, #667eea, #764ba2);
+  --quem-somos-gradient: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
+}
+
+/* Variáveis para tema escuro */
+.dark-mode {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2d2d2d;
+  --bg-tertiary: #3a3a3a;
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --text-muted: #999999;
+  --border-color: #404040;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --accent-color: #667eea;
+  --accent-secondary: #764ba2;
+  --header-bg: rgba(0, 0, 0, 0.8);
+  --header-bg-scrolled: rgba(0, 0, 0, 0.95);
+  --card-bg: #2d2d2d;
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --input-bg: #3a3a3a;
+  --input-border: #555555;
+  --button-bg: linear-gradient(45deg, #667eea, #764ba2);
+  --button-text: #ffffff;
+  --link-color: #667eea;
+  --link-hover: #764ba2;
+  --ferramentas-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #475569 75%, #64748b 100%);
+  --footer-gradient: linear-gradient(to right, #0f172a, #1e293b, #334155);
+  --quem-somos-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #475569 75%, #64748b 100%);
+}
+
+/* Aplicar variáveis globais */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Estilos para seções */
+section {
+  background-color: var(--bg-secondary);
+  transition: background-color 0.3s ease;
+}
+
+/* Estilos para cards */
+.card, .service-card, .tool-card {
+  background-color: var(--card-bg);
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+/* Estilos para inputs */
+input, textarea, select {
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  color: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+/* Estilos para links */
+a {
+  color: var(--link-color);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+/* Estilos para botões */
+.btn, button {
+  background: var(--button-bg);
+  color: var(--button-text);
+  transition: all 0.3s ease;
+}
+
+/* Transições suaves para mudanças de tema */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+} 

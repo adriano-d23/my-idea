@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import "./DropDown.css";
 import { FaBars } from 'react-icons/fa';
 import logo1 from '../assets/logo1.png';
+import ThemeToggle from '../components/ThemeToggle';
 
 export const DropDown = ({ scrollToSection, refs }) => {
   const [showMenu, setShowMenu] = useState(false);
@@ -26,23 +27,28 @@ export const DropDown = ({ scrollToSection, refs }) => {
           <img src={logo1} alt="Logo" className="menu-logo" />
           <p className="logo-text">MY IDEA</p>
         </div>
+        
+        <div className="header-center">
+          <ul className={`navigation ${showMenu ? 'active' : ''}`}>
+            <li className="list-menu" onClick={() => handleScroll(refs.homeRef)}>
+              <a href="#home">Home</a>
+            </li>
+            <li className="list-menu" onClick={() => handleScroll(refs.quemSomosRef)}>
+              <a href="#quem-somos">Quem somos</a>
+            </li>
+            <li className="list-menu" onClick={() => handleScroll(refs.servicesRef)}>
+              <a href="#servicos">Serviços</a>
+            </li>
+            <li className="list-menu" onClick={() => handleScroll(refs.ferramentasRef)}>
+              <a href="#ferramentas">Ferramentas</a>
+            </li>
+          </ul>
+          <ThemeToggle />
+        </div>
+        
         <span className="bar_menu" onClick={toggleMenu}>
           <FaBars />
         </span>
-        <ul className={`navigation ${showMenu ? 'active' : ''}`}>
-          <li className="list-menu" onClick={() => handleScroll(refs.homeRef)}>
-            <a href="#home">Home</a>
-          </li>
-          <li className="list-menu" onClick={() => handleScroll(refs.quemSomosRef)}>
-            <a href="#quem-somos">Quem somos</a>
-          </li>
-          <li className="list-menu" onClick={() => handleScroll(refs.servicesRef)}>
-            <a href="#servicos">Serviços</a>
-          </li>
-          <li className="list-menu" onClick={() => handleScroll(refs.ferramentasRef)}>
-            <a href="#ferramentas">Ferramentas</a>
-          </li>
-        </ul>
       </div>
     </header>
   );
