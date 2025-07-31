@@ -123,7 +123,9 @@ const Footer = () => {
                 <FontAwesomeIcon icon={faWhatsapp} />
               </motion.a>
               <motion.a 
-                href="#" 
+                href="https://www.instagram.com/myideatecnologiaweb/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="social-link instagram"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
@@ -132,7 +134,9 @@ const Footer = () => {
                 <FontAwesomeIcon icon={faInstagram} />
               </motion.a>
               <motion.a 
-                href="#" 
+                href="https://www.facebook.com/profile.php?id=100077938535114"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="social-link facebook"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
