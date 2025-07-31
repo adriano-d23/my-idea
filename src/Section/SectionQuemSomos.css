@@ -67,7 +67,7 @@
 
 .intro-text {
   font-size: clamp(1rem, 2.5vw, 1.3rem);
-  color: #333333;
+  color: #2c3e50 !important;
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.6;
@@ -367,7 +367,7 @@
 }
 
 .dark-mode .intro-text {
-  color: #ffffff;
+  color: #ffffff !important;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
