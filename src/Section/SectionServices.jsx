@@ -1,144 +1,110 @@
 import React from 'react';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import './SectionServices.css';
 import { motion } from 'framer-motion';
-
-// Importando as imagens
-import marketingImg from '../assets/marketing.png';
-import criacaoSitesImg from '../assets/criacao-site.png';
-import desenvolvimentoSistemasImg from '../assets/developer.png';
-import droneImg from '../assets/gravacao-drone.png';
-import bancoDadosImg from '../assets/banco-de-dados.png';
+import './SectionServices.css';
 
 const services = [
-    {
-        title: 'Marketing Digital',
-        description: 'Abarca a divulgação e criação de conteúdos para promoção da marca na internet.',
-        imageUrl: marketingImg,
-    },
-    {
-        title: 'Criação de Sites',
-        description: 'Desenvolvimento de sites personalizados de acordo com a cultura de cada empresa',
-        imageUrl: criacaoSitesImg,
-    },
-    {
-        title: 'Desenvolvimento de Sistemas',
-        description: 'Criação de sistemas web e mobile usando as principais ferramentas de desenvolvimento.',
-        imageUrl: desenvolvimentoSistemasImg,
-    },
-    {
-        title: 'Gravação de Vídeos com Drone',
-        description: 'Produção de vídeos com drone para divulgação de marketing empresarial.',
-        imageUrl: droneImg,
-    },
-    {
-        title: 'Gerenciamento de Banco de Dados',
-        description: 'Administração e manutenção de bancos de dados para garantir desempenho e segurança.',
-        imageUrl: bancoDadosImg,
-    }
+  {
+    icon: '💻',
+    title: 'Desenvolvimento Web',
+    description: 'Sites e aplicações web modernas e responsivas com as melhores tecnologias',
+    features: ['React', 'Next.js', 'TypeScript', 'Responsivo'],
+    color: '#667eea',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop'
+  },
+  {
+    icon: '📱',
+    title: 'Aplicativos Mobile',
+    description: 'Apps nativos e híbridos para iOS e Android com performance excepcional',
+    features: ['React Native', 'Flutter', 'iOS', 'Android'],
+    color: '#e74c3c',
+    image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=300&fit=crop'
+  },
+  {
+    icon: '🛒',
+    title: 'E-commerce',
+    description: 'Lojas online completas com sistema de pagamento e gestão de estoque',
+    features: ['WooCommerce', 'Shopify', 'Pagamentos', 'Estoque'],
+    color: '#f39c12',
+    image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=300&fit=crop'
+  },
+  {
+    icon: '📊',
+    title: 'Sistemas ERP',
+    description: 'Sistemas de gestão empresarial integrados e personalizados',
+    features: ['Dashboard', 'Relatórios', 'Integração', 'Cloud'],
+    color: '#2ecc71',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop'
+  },
+  {
+    icon: '🎨',
+    title: 'Design UI/UX',
+    description: 'Interfaces intuitivas e experiências únicas para seu produto',
+    features: ['Figma', 'Adobe XD', 'Prototipagem', 'Testes'],
+    color: '#9b59b6',
+    image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=300&fit=crop'
+  },
+  {
+    icon: '☁️',
+    title: 'Cloud Computing',
+    description: 'Infraestrutura e serviços em nuvem para escalabilidade total',
+    features: ['AWS', 'Azure', 'Google Cloud', 'DevOps'],
+    color: '#1abc9c',
+    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop'
+  }
 ];
 
 const SectionServices = () => {
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 4000,
-        pauseOnHover: true,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                },
-            },
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                },
-            },
-        ],
-    };
+  return (
+    <section className="services">
+      <div className="container">
+        <motion.div 
+          className="section-header"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="section-badge">
+            <span className="badge-icon">⚙️</span>
+            Nossos Serviços
+          </div>
+          <h2>Soluções Completas para o Digital</h2>
+          <p>Oferecemos uma gama completa de serviços para transformar sua presença digital</p>
+        </motion.div>
 
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.2,
-                delayChildren: 0.3
-            }
-        }
-    };
-
-    const itemVariants = {
-        hidden: { opacity: 0, y: 50 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.6,
-                ease: "easeOut"
-            }
-        }
-    };
-
-    return (
-        <section className="services">
-            <div className="container">
-                <motion.div 
-                    className="section-header"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
-                >
-                    <h2>Conheça nossos principais serviços</h2>
-                    <div className="separator"></div>
-                </motion.div>
-                
-                <motion.div
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                >
-                    <Slider {...settings}>
-                        {services.map((service, index) => (
-                            <motion.div 
-                                key={index}
-                                variants={itemVariants}
-                                whileHover={{ 
-                                    scale: 1.02,
-                                    transition: { duration: 0.2 }
-                                }}
-                            >
-                                <div className="service-card">
-                                    <img 
-                                        src={service.imageUrl} 
-                                        alt={service.title} 
-                                        className="service-image" 
-                                    />
-                                    <div className="service-content">
-                                        <h3>{service.title}</h3>
-                                        <p>{service.description}</p>
-                                    </div>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </Slider>
-                </motion.div>
-            </div>
-        </section>
-    );
-}
+        <div className="services-grid">
+          {services.map((service, index) => (
+            <motion.div 
+              key={index}
+              className="service-card"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              whileHover={{ y: -10, scale: 1.02 }}
+              style={{ '--card-color': service.color }}
+            >
+              <div className="service-image">
+                <img src={service.image} alt={service.title} />
+                <div className="service-overlay">
+                  <div className="service-icon">{service.icon}</div>
+                </div>
+              </div>
+              <div className="service-content">
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+                <div className="service-features">
+                  {service.features.map((feature, idx) => (
+                    <span key={idx} className="feature-tag">{feature}</span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
 
 export default SectionServices;
